@@ -4,122 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Absence</title>
-</head>
-<style>
-      body, html {
+    <style>
+        body, html {
             margin: 0;
             padding: 0;
             width: 100%;
+            background-color: aquamarine;
         }
-        .container-one {
+
+        .container {
             border: 2px solid black;
             margin: 2%;
             padding: 1%;
             display: grid;
-            grid-template-rows: repeat(3, 1fr);
             grid-template-columns: repeat(3, 1fr);
-
+            grid-gap: 10px;
         }
 
-        .excuse-label{
-            grid-area: 1 / 1 / 1 / 1;
-        }
-
-        .checkbox{
-            grid-row: span 1;
-            grid-column: span 2;
-        }
-
-        .signature{
-            grid-row: 3;
-            grid-column: 2 / span 2;
-        }
-
-        .container-two {
-            border: 2px solid black;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin: 2%;
-            padding: 1%;
-            display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            grid-template-columns: repeat(3, 1fr);
-
-        }
-
-        .second-manager-opinion-inputline{
-           grid-column: span 3;
-           overflow: hidden;
-        }
-
-        .second-manager-signature{
-            margin-top: 3%;
-            grid-area: 3 / 3 / 3 / 3;
-        }
-
-        .container-three {
-            border: 2px solid black;
-            margin: 2%;
-            padding: 1%;
-            display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .personal-supervisor-heading{
-            text-decoration: underline;
-            text-align: center;
-        }
-
-        .director-signature{
-            grid-row: 3;
-            grid-column: 2 / span 2;
-            overflow: hidden;
-        }
-
-        .supervisor-checkbox{
-            grid-row: span 1;
-            grid-column: span 3;
         }
 
         .logo {
-            width: 150px; /* Adjust the size as needed */
-            height: 150px; /* Adjust the size as needed */
-            border-radius: 50%; /* Makes the div circular */
-            overflow: hidden; /* Ensures the image stays within the circle */
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
         }
 
         .logo img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire div without distortion */
+            object-fit: cover;
         }
 
-        label{
+        label {
             font-weight: bold;
         }
 
-        .header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .signature, .director-signature {
+            grid-column: span 3;
+            margin-top: 10px;
+            margin-left: 70%;
+            overflow: hidden;
         }
 
-        .important-label, .resignation-label{
-            margin-right:3% ;
-            margin-left: 3%;
+        .checkbox, .supervisor-checkbox {
+            grid-column: span 2;
         }
-</style>
+
+        .opinion-inputline, .supervisor-checkbox {
+            grid-column: span 3;
+            overflow: hidden;
+        }
+
+        .personal-supervisor-heading {
+            text-decoration: underline;
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
     <form action="" method="post">
         <div class="header">
             <div class="logo">
-                <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1725321600&semt=ais_hybrid" alt="">
+                <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg" alt="Company Logo">
             </div>
             <div class="workplace">
-                <p>Workplace : (__________________)</p>
+                <p>Workplace: (__________________)</p>
             </div>
         </div>
-        <div class="container-one">
-            <label class="excuse-label" for="excuse">First manager opinion : </label>
+
+        <div class="container">
+            <label for="excuse">First manager opinion:</label>
             <div class="checkbox">
                 <label for="excuse_accepted">Excuse accepted</label>
                 <input type="checkbox" id="excuse_accepted" name="excuse_accepted" value="1">
@@ -127,23 +87,27 @@
                 <label for="excuse_rejected">Excuse rejected</label>
                 <input type="checkbox" id="excuse_rejected" name="excuse_rejected" value="0">
             </div>
-            <div class="signature">Signature : ________________________</div>
+            <div class="signature">Signature: ____________________________________________________________________________________________________</div>
         </div>
-        <div class="container-two">
-            <label class="second-manager-opinion-label" for="excuse">Second manager opinion : </label>
-            <div class="second-manager-opinion-inputline">_____________________________________________________________________________________________________________________________________________________</div>
-            <div class="second-manager-signature">Signature : __________________________________________</div>
+
+        <div class="container">
+            <label for="second_opinion">Second manager opinion:</label>
+            <div class="opinion-inputline">__________________________________________________________________________________________________________________________</div>
+            <div class="signature">Signature: ____________________________________________________________________________________________________</div>
         </div>
+
         <h3 class="personal-supervisor-heading">Specialized for personal supervisor</h3>
-        <div class="container-three">
+
+        <div class="container">
             <div class="supervisor-checkbox">
-                <label class="important-label" for="important">Important</label>
+                <label for="important">Important</label>
                 <input type="checkbox" id="important" name="important" value="1">
-                <label class="resignation-label" for="resignation">Resignation</label>
+
+                <label for="resignation">Resignation</label>
                 <input type="checkbox" id="resignation" name="resignation" value="1">
             </div>
-            <div class="director-signature">Director of personal management : _________________________________________________________________________</div>
+            <div class="director-signature">Director of personal management: ________________________________________________________________________</div>
         </div>
     </form>
 </body>
-</html> 
+</html>
