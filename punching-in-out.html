@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punching</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: aquamarine;
+        }
+
+        .container {
+            border: 2px solid black;
+            margin: 2%;
+            padding: 1%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2%;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .signature,
+        .director-signature {
+            grid-column: span 3;
+            margin-top: 10px;
+            margin-left: 70%;
+            overflow: hidden;
+        }
+
+        .checkbox,
+        .supervisor-checkbox {
+            grid-column: span 2;
+        }
+
+        .opinion-inputline,
+        .supervisor-checkbox {
+            grid-column: span 3;
+            overflow: hidden;
+        }
+
+        .personal-supervisor-heading {
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        .heading,
+        .statement-heading {
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            height: 50px;
+        }
+
+        table {
+            width: 100%;
+            margin-left: 1%;
+            margin-right: 3%;
+        }
+
+        .table {
+            margin-left: 1%;
+            margin-right: 3%;
+        }
+        .mr , .important-note{
+            margin-right: 2%;
+            margin-left: 2%;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <div class="header">
+            <div class="logo">
+                <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg"
+                    alt="Company Logo">
+            </div>
+            <div class="workplace">
+                <p>Date: _______________________</p>
+                <p>Day: _______________________</p>
+                <p>Workplace: __________________</p>
+            </div>
+        </div>
+        <div class="heading">
+            <h1>Template for not punching in/out</h2>
+        </div>
+        <div class="mr">Mr./Mrs. _______________________________</div>
+        <div class="container">
+            <div> Civil ID : </div>
+            <div> User ID : </div>
+            <div> Administration : </div>
+        </div>
+        <div class="statement-heading">
+            <h2>Statement of not punching in/out</h2>
+        </div>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="statement-heading">
+            <h2>Failure to respond to the the notification within 3 days from the date of notification will be considered as an unexcused absence.</h2>
+        </div>
+        <div class="container">
+            <div>Reason for not punching in/out.</div>
+            <div class="opinion-inputline">__________________________________________________________________________________________________________________________</div>
+            <div class="signature">Signature:____________________________________________________________________________________________________</div>
+        </div>
+        <div class="container">
+            <label for="excuse">First manager opinion:</label>
+            <div>
+                <label for="excuse_accepted">Excuse accepted</label>
+                <input type="checkbox" id="excuse_accepted" name="excuse_accepted" value="1">
+            </div>
+            <div>
+                <label for="excuse_rejected">Excuse rejected</label>
+                <input type="checkbox" id="excuse_rejected" name="excuse_rejected" value="0">
+            </div>
+            <div class="signature">Signature:____________________________________________________________________________________________________</div>
+        </div>
+
+        <div class="container">
+            <label for="second_opinion">Second manager opinion:</label>
+            <div class="opinion-inputline">__________________________________________________________________________________________________________________________</div>
+            <div class="signature">Signature:____________________________________________________________________________________________________</div>
+        </div>
+        <h3 class="personal-supervisor-heading">Specialized for personal supervisor</h3>
+        <div class="container">
+            <div><label for="important">Important</label>
+                <input type="checkbox" id="important" name="important" value="1">
+            </div>
+            <div>
+                <label for="resignation">Resignation</label>
+                <input type="checkbox" id="resignation" name="resignation" value="1">
+            </div>
+            <div>
+                <label for="authentication_medthod">Authentication method approved</label>
+                <input type="checkbox" id="authentication_medthod" name="authentication_medthod" value="1">
+            </div>
+            <div class="director-signature">Director of personal management:________________________________________________________________________</div>
+        </div>
+        <div class="important-note">Important Note:</div>
+    </form>
+</body>
+
+</html>
